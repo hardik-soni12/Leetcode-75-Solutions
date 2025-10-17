@@ -16,7 +16,8 @@ def gcd_of_strings(str1, str2):
         return ""
     
     def gcd(a, b):
-        a, b = b, a % b
+        while b != 0:
+            a, b = b, a % b
         return a
     
     size = gcd(len(str1), len(str2))
