@@ -1,4 +1,5 @@
 import random
+from time import sleep
 
 class GuessTheNumber:
     def __init__(self):        
@@ -21,6 +22,7 @@ Enjoy!!! 🎮\n''')
             try:
                 print(f'You have {self.__chances} chances left.\n')
                 guess = int(input('Guess The Number: '))
+                sleep(1)
                 if guess not in range(1, 11):
                     print('⚠️ Please choose a number between 1 and 10.\n')
                     continue
