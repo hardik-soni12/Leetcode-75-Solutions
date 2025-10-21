@@ -19,7 +19,7 @@ def can_place_flowers(flowerbed, n):
     for i, flower in enumerate(flowerbed):
         if flower == 0:
             leftside = (i==0) or flowerbed[i-1] == 0
-            rightside = flowerbed[len(flowerbed)-1] == 0 or flowerbed[i+1] == 0
+            rightside = (i==len(flowerbed)-1) or flowerbed[i+1] == 0
             if leftside and rightside:
                 flowerbed[i] = 1
                 count += 1
@@ -29,6 +29,6 @@ def can_place_flowers(flowerbed, n):
             
     return count>= n
 
-flowerbed = [1,0,0,0,1]
+flowerbed = [0,1,0]
 n = 1
 print(can_place_flowers(flowerbed, n))
